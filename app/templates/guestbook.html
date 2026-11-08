@@ -1,0 +1,15 @@
+{% extends "lab_base.html" %}
+{% block content %}
+<h1>Mural de recados</h1>
+<form method="post">
+  <p><input name="author" placeholder="seu nome" maxlength="40"></p>
+  <p><textarea name="body" rows="3" cols="50" placeholder="recado" maxlength="500"></textarea></p>
+  <button>Publicar</button>
+</form>
+{% for c in comments %}
+  <div class="box"><strong>{{ c.author }}</strong><br>
+    {# A diferença entre os modos está nesta linha: |safe desliga o escape do Jinja. #}
+    {% if vulnerable %}{{ c.body|safe }}{% else %}{{ c.body }}{% endif %}
+  </div>
+{% endfor %}
+{% endblock %}

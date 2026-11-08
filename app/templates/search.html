@@ -1,0 +1,14 @@
+{% extends "lab_base.html" %}
+{% block content %}
+<h1>Busca de produtos</h1>
+<form><input name="q" value="{{ q }}" placeholder="nome do produto" size="40"> <button>Buscar</button></form>
+{% if error %}<p class="err">{{ error }}</p>{% endif %}
+{% if q and not error %}
+  {% if results %}
+  <table>
+    <tr><th>Produto</th><th>Descrição</th><th>Preço (centavos)</th></tr>
+    {% for r in results %}<tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td></tr>{% endfor %}
+  </table>
+  {% else %}<p>Nada encontrado.</p>{% endif %}
+{% endif %}
+{% endblock %}

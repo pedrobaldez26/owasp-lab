@@ -1,0 +1,9 @@
+{% extends "lab_base.html" %}
+{% block content %}
+<h1>Nota fiscal #{{ invoice.id }}</h1>
+<table>
+  <tr><th>Titular</th><td>{{ invoice.owner }}</td></tr>
+  <tr><th>Descrição</th><td>{{ invoice.description }}</td></tr>
+  <tr><th>Valor</th><td>{{ '%.2f'|format(invoice.amount_cents / 100) }}</td></tr>
+</table>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "lab_base.html" %}
+{% block content %}
+<h1>{{ 'Versão vulnerável' if vulnerable else 'Versão corrigida' }}</h1>
+{% if user %}
+  <p>Logado como <strong>{{ user.username }}</strong> ({{ user.role }}).</p>
+  <p>Notas fiscais: <a href="/{{ mode }}/invoices/1">1</a> · <a href="/{{ mode }}/invoices/2">2</a> · <a href="/{{ mode }}/invoices/3">3</a> · <a href="/{{ mode }}/invoices/4">4</a></p>
+{% else %}
+  <p>Você não está logado. Usuários fictícios: <code>alice</code> / <code>alice123</code>.</p>
+{% endif %}
+{% endblock %}
