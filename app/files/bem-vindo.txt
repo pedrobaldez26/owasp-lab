@@ -1,0 +1,1 @@
+Bem-vindo ao laboratório. Este arquivo é um dos documentos públicos servidos pela rota /files.
